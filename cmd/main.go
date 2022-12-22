@@ -23,7 +23,7 @@ func main() {
 			// 重定向
 			// 获取重定向地址
 			redirectUrl := proxy.ForwardHandler(c.Param("proxyPath"))
-			c.Redirect(302, redirectUrl)
+			c.Redirect(307, redirectUrl)
 		},
 	)
 	r.Run(":8080")
