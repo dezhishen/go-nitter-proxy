@@ -3,7 +3,7 @@ RUN go env -w GO111MODULE=auto \
   && go env -w GOPROXY=https://goproxy.cn,direct 
 WORKDIR /build
 COPY ./ .
-RUN cd /build && go build -tags netgo -ldflags="-w -s" -o app main.go 
+RUN cd /build && go build -tags netgo -ldflags="-w -s" -o app cmd/main.go 
 
 FROM alpine
 LABEL MAINTAINER=github.com/dezhiShen
